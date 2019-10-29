@@ -5,7 +5,8 @@ orbs:
 jobs:
  build_and_test:
  executor: win/vs2019
-  steps:
+
+steps:
    - checkout
    - run: g++ -std=c++11 main.cpp Directory.cpp System.cpp
    - run: ./a.out < .circleci/in.txt > .circleci/out.txt
