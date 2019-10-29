@@ -1,12 +1,9 @@
-version: 2.1
-orbs:
- win: circleci/windows@1.0.0
-
+version: 2
 jobs:
  build_and_test:
- executor: win/vs2019
-
-steps:
+  machine:
+   image: circleci/classic:201908-01
+  steps:
    - checkout
    - run: g++ -std=c++11 main.cpp Directory.cpp System.cpp
    - run: ./a.out < .circleci/in.txt > .circleci/out.txt
