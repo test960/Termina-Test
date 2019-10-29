@@ -1,8 +1,10 @@
-version: 2
+version: 2.1
+orbs:
+ win: circleci/windows@1.0.0
+
 jobs:
  build_and_test:
-  machine:
-   image: circleci/classic:201908-01
+ executor: win/vs2019
   steps:
    - checkout
    - run: g++ -std=c++11 main.cpp Directory.cpp System.cpp
